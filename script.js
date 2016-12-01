@@ -28,7 +28,6 @@ $(document).ready(function(){
 
     console.log(fruitArray);
 
-
     //show MarketPrice on DOM
     var showMarketPrice = function(){
       //loop thru fruitArray and show each price
@@ -37,13 +36,18 @@ $(document).ready(function(){
       $('#bananasMP').html(fruitArray[2].marketPrice);
       $('#grapesMP').html(fruitArray[3].marketPrice);
     };//end showMarketPrice
-    
+
     //random price change function
     var changePrice = function (){
       for (var i = 0; i < fruitArray.length; i++) {
-        fruitArray[i].marketPrice += (Math.random()-0.5);
+        fruitArray[i].marketPrice = (Number(fruitArray[i].marketPrice) + (Math.random()-0.5)).toLocaleString('en-US', { style:'currency', currency: 'USD'});
+      setInterval(changePrice, 15000);
       }
       showMarketPrice();
     };// end changePrice
-  changePrice();
+
+
+    changePrice();
+
+
 });//end of document ready function
