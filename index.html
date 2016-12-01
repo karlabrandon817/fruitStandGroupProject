@@ -4,33 +4,33 @@
     <meta charset="utf-8">
     <script src="../vendors/jquery-3.1.1.min.js" charset="utf-8"></script>
     <script src="script.js" charset="utf-8"></script>
-    <title>Fruit Stand</title>
+    <!-- Latest compiled and minified CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+    <!-- Optional theme -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"></script>
+  <title>Fruit Stand</title>
   </head>
   <body>
     <h1>Fruit Stand</h1>
     <h2>Fruit For Sale Today</h2>
-    <table id="fruitForSale">
-      <tr>
-        <th>Type of Fruit</th>
-        <th>Market Price</th>
-      </tr>
-      <tr>
-        <td id="apples">Apples</td>
-        <td id="applesPrice"></td>
-      </tr>
-      <tr>
-        <td id="oranges">Oranges</td>
-        <td id="orangesPrice"></td>
-      </tr>
-      <tr>
-        <td id="bananas">Bananas</td>
-        <td id="bananasPrice"></td>
-      </tr>
-      <tr>
-        <td id="grapes">Grapes</td>
-        <td id="grapesPrice"></td>
-      </tr>
-    </table>
-    </div>
+    <div class="container">
+      <div class="row">
+        <div id="apples" class="col-sm-3">
+          Apples
+        </div>
+        <div id="oranges" class="col-sm-3">
+          Oranges
+        </div>
+        <div id="bananas" class="col-sm-3">
+          Bananas
+        </div>
+        <div id="grapes" class="col-sm-3">
+          Grapes
+        </div>
+      </div>
   </body>
 </html>
