@@ -27,18 +27,10 @@ changePrice();
 
 });//end of document ready function
 
-//take2 random number
-// var minNumber = 0.50;
-// var maxNumber = 9.99;
-//
-// randomPrice(minNumber,maxNumber);
-// function randomPriceRange
-//
-// Math.floor(Math.random() * 6) + 1
-
 //random price change function
 var changePrice = function (){
   for (var i = 0; i < fruitArray.length; i++) {
     fruitArray[i].marketPrice += (Math.random()-0.5);
   }
+
 };// end changePrice
