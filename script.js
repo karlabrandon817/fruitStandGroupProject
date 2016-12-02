@@ -39,13 +39,14 @@ $(document).ready(function(){
       $('#bananasMP').html(fruitArray[2].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
       $('#grapesMP').html(fruitArray[3].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     };//end showMarketPrice
-var limitPrice = function(){
-    if(fruitArray[i].marketPrice > 9.99){
-      fruitArray[i].marketPrice == 9.99;
-    }else{
-      return fruitArray[i].marketPrice;
-    }
-};
+
+// var limitPrice = function(){
+//     if(fruitArray[i].marketPrice > 9.99){
+//       fruitArray[i].marketPrice == 9.99();
+//     }else{
+//       return fruitArray[i].marketPrice;
+//     }
+// };
 
 
 
@@ -78,14 +79,14 @@ var limitPrice = function(){
 
 var userCash = 100;
 //display userCash to DOM
-$("#myCash").html(userCash);
+$("#myCash").html((userCash).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
 
     $('#applesB').on('click', function(){
       console.log(fruitArray);
       fruitArray[0].quantity += 1;
       $('#applesQ').html(fruitArray[0].quantity);
       console.log(userCash -= fruitArray[0].marketPrice);
-      $("#myCash").html(userCash);
+      $("#myCash").html((userCash).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
       appleArray.push(fruitArray[0].marketPrice);
       var count = 0;
       for (var i = 0; i <appleArray.length; i++){
@@ -99,7 +100,7 @@ $("#myCash").html(userCash);
       fruitArray[1].quantity += 1;
       $('#orangesQ').html(fruitArray[1].quantity);
       console.log(userCash -= fruitArray[1].marketPrice);
-      $("#myCash").html(userCash);
+      $("#myCash").html((userCash).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
       orangeArray.push(fruitArray[1].marketPrice);
       var count = 0;
       for (var i = 0; i <orangeArray.length; i++){
@@ -113,7 +114,7 @@ $("#myCash").html(userCash);
       fruitArray[2].quantity += 1;
       $('#bananasQ').html(fruitArray[2].quantity);
       console.log(userCash -= fruitArray[2].marketPrice);
-      $("#myCash").html(userCash);
+      $("#myCash").html((userCash).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
       bananaArray.push(fruitArray[2].marketPrice);
       var count = 0;
       for (var i = 0; i <bananaArray.length; i++){
@@ -127,7 +128,7 @@ $("#myCash").html(userCash);
       fruitArray[3].quantity += 1;
       $('#grapesQ').html(fruitArray[3].quantity);
       console.log(userCash -= fruitArray[3].marketPrice);
-      $("#myCash").html(userCash);
+      $("#myCash").html((userCash).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
       grapeArray.push(fruitArray[3].marketPrice);
       var count = 0;
       for (var i = 0; i <grapeArray.length; i++){
