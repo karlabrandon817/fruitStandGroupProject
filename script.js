@@ -34,15 +34,26 @@ $(document).ready(function(){
     //show MarketPrice on DOM
     var showMarketPrice = function(){
       //loop thru fruitArray and show each price
-      $('#applesMP').html(fruitArray[0].marketPrice);
-      $('#orangesMP').html(fruitArray[1].marketPrice);
-      $('#bananasMP').html(fruitArray[2].marketPrice);
-      $('#grapesMP').html(fruitArray[3].marketPrice);
+      $('#applesMP').html(fruitArray[0].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+      $('#orangesMP').html(fruitArray[1].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+      $('#bananasMP').html(fruitArray[2].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
+      $('#grapesMP').html(fruitArray[3].marketPrice.toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     };//end showMarketPrice
+var limitPrice = function(){
+    if(fruitArray[i].marketPrice > 9.99){
+      fruitArray[i].marketPrice == 9.99;
+    }else{
+      return fruitArray[i].marketPrice;
+    }
+};
+
+
+
+
 
 //random price change function
     function getRandomNumber(min, max){
-      return Math.random() * (0.50 - 0.01) + 0.01;
+      return Math.random() * (0.50 - (-0.50)) + (-0.50);
     }//end random price change function
     console.log(getRandomNumber());
 
@@ -51,10 +62,10 @@ $(document).ready(function(){
       for (var i = 0; i < fruitArray.length; i++) {
       console.log( fruitArray[i].marketPrice = (Number(fruitArray[i].marketPrice))+getRandomNumber());
 
-    if(fruitArray[i].martketPlace < 0.50){
+    if(fruitArray[i].martketPlace <= 0.50){
     return fruitArray[i].martketPlace === 0.50;
     }
-    if(fruitArray[i].martketPlace > 9.99 ){
+    if(fruitArray[i].martketPlace >= 9.99 ){
       return fruitArray[i].martketPlace === 9.99;
     }
   }
@@ -81,7 +92,7 @@ $("#myCash").html(userCash);
         count = count + appleArray[i];
       }
       console.log(count);
-      $('#applesAP').html(count/appleArray.length);
+      $('#applesAP').html((count/appleArray.length).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     });
 
     $('#orangesB').on('click', function(){
@@ -95,7 +106,7 @@ $("#myCash").html(userCash);
         count = count + orangeArray[i];
       }
       console.log(count);
-      $('#orangesAP').html(count/orangeArray.length);
+      $('#orangesAP').html((count/orangeArray.length).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     });
 
     $('#bananasB').on('click', function(){
@@ -109,7 +120,7 @@ $("#myCash").html(userCash);
         count = count + bananaArray[i];
       }
       console.log(count);
-      $('#bananasAP').html(count/bananaArray.length);
+      $('#bananasAP').html((count/bananaArray.length).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     });
 
     $('#grapesB').on('click', function(){
@@ -123,7 +134,7 @@ $("#myCash").html(userCash);
         count = count + grapeArray[i];
       }
       console.log(count);
-      $('#grapesAP').html(count/grapeArray.length);
+      $('#grapesAP').html((count/grapeArray.length).toLocaleString('en-US', { style: 'currency', currency: 'USD' }));
     });
 
 
