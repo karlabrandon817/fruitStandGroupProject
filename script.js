@@ -40,14 +40,29 @@ $(document).ready(function(){
       $('#grapesMP').html(fruitArray[3].marketPrice);
     };//end showMarketPrice
 
-    //random price change function
+//random price change function
+    function getRandomNumber(min, max){
+      return Math.random() * (0.50 - 0.01) + 0.01;
+    }//end random price change function
+    console.log(getRandomNumber());
+
+//add random price to marketprice
     var changePrice = function (){
       for (var i = 0; i < fruitArray.length; i++) {
-      console.log( fruitArray[i].marketPrice = (Number(fruitArray[i].marketPrice))); //+ (Math.random()-0.5)).toLocaleString('en-US', { style:'currency', currency: 'USD'}));
-      // setInterval(changePrice, 15000);
+      console.log( fruitArray[i].marketPrice = (Number(fruitArray[i].marketPrice))+getRandomNumber());
+
+    if(fruitArray[i].martketPlace < 0.50){
+    return fruitArray[i].martketPlace === 0.50;
     }
+    if(fruitArray[i].martketPlace > 9.99 ){
+      return fruitArray[i].martketPlace === 9.99;
+    }
+  }
+
       showMarketPrice();
     };// end changePrice
+
+    setInterval(changePrice, 1000);
     changePrice();
 
 var userCash = 100;
@@ -116,6 +131,7 @@ $("#myCash").html(userCash);
     if(userCash <= 0){
       alert('You are broke');
     }//end alert
+
 
 //calculate userCash
 
