@@ -74,7 +74,7 @@ $(document).ready(function(){
       showMarketPrice();
     };// end changePrice
 
-    setInterval(changePrice, 1000);
+    setInterval(changePrice, 15000);
     changePrice();
 
 var userCash = 100;
