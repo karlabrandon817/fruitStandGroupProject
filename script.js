@@ -47,27 +47,32 @@ $(document).ready(function(){
     changePrice();
 
 var userCash = 100;
+//display userCash to DOM
 
     $('#applesB').on('click', function(){
       console.log(fruitArray);
       fruitArray[0].quantity += 1;
       $('#applesQ').html(fruitArray[0].quantity);
       console.log(userCash -= fruitArray[0].marketPrice);
+      $("#myCash").html(userCash);
     });
     $('#orangesB').on('click', function(){
       fruitArray[1].quantity += 1;
       $('#orangesQ').html(fruitArray[1].quantity);
       console.log(userCash -= fruitArray[1].marketPrice);
+      $("#myCash").html(userCash);
     });
     $('#bananasB').on('click', function(){
       fruitArray[2].quantity += 1;
       $('#bananasQ').html(fruitArray[2].quantity);
       console.log(userCash -= fruitArray[2].marketPrice);
+      $("#myCash").html(userCash);
     });
-    $('#grapesB').on('click', function(){ 
+    $('#grapesB').on('click', function(){
       fruitArray[3].quantity += 1;
       $('#grapesQ').html(fruitArray[3].quantity);
       console.log(userCash -= fruitArray[3].marketPrice);
+      $("#myCash").html(userCash);
     });
 
 //calculate userCash
